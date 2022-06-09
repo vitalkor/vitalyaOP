@@ -1,0 +1,48 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите ограничение:");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("Количество попыток:");
+            int p = int.Parse(Console.ReadLine());
+            Random s = new Random();
+            int a = s.Next(1, n);
+            for (int i = 0; i < p; i++)
+            {
+                Console.Write("Введите число:");
+                int c = int.Parse(Console.ReadLine());
+                if (i == p - 1)
+                {
+                    Console.WriteLine("Попытки закончились");
+                    break;
+                }
+                if (c == a)
+                {
+                    Console.WriteLine("Вы угадали");
+                    break;
+                }
+                else
+                {
+                    if (c > a)
+                    {
+                        Console.WriteLine("Число больше");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Число меньше");
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}

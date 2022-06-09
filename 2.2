@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите a:");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите b:");
+            int b = int.Parse(Console.ReadLine());
+            Program r = new Program();
+            for (int i = 0; i < 100; i++)
+            {
+                Console.Write(r.Rand(a, b));
+                Console.Write(" ");
+            }
+
+        }
+        public int Rand(int a, int b)
+        {
+            Random rand = new Random();
+            int c;
+            c = rand.Next(a, b);
+            return c = rand.Next(a, b); ;
+
+        }
+    }
+}

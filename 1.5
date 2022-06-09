@@ -1,0 +1,25 @@
+﻿using System;
+namespace Currently
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int m = 3;
+            int i = 4;
+            Console.WriteLine("Введите число");
+            int n = int.Parse(Console.ReadLine());
+            if (n < 4)
+                Console.WriteLine(4);
+            else
+                while (i < n)
+                {
+                    m = m + 2;
+                    i = i + m;
+
+                }
+            Console.WriteLine(i);
+        }
+    }
+}

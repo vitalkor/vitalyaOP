@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите число");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите месяц");
+            int b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите год");
+            int c = int.Parse(Console.ReadLine());
+            if (((c % 4 == 0) && (c % 100 != 0) && (b == 2) && (a <= 29)) || ((c % 4 == 0) && (c % 100 == 0) && (c % 400 == 0) && (b == 2) && (a <= 29)) || ((c % 4 != 0) && (b == 2) && (a <= 28)) || (((b == 1) || (b == 3) || (b == 5) || (b == 7) || (b == 8) || (b == 10) || (b == 12)) && (a <= 31)) || (((b == 4) || (b == 6) || (b == 9) || (b == 11)) && (a <= 30)))
+            {
+                Console.WriteLine("Дата введена корректно");
+            }
+            else
+            {
+                Console.WriteLine("Дата введена некорректно");
+            }
+            if (((c % 4 == 0) && (c % 100 != 0)) || ((c % 4 == 0) && (c % 100 == 0) && (c % 400 == 0)))
+            {
+                int[] array = { 0, 31, 60, 91, 121, 152, 183, 214, 244, 274, 305, 335, 366 };
+                int x = b - 1;
+                int y = array[x] + a;
+                int z = 366 - y;
+                Console.WriteLine($"{y} день с начала года");
+                Console.WriteLine($"{z} осталось до окончания года");
+            }
+            else
+            {
+                int[] array = { 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
+                int x = b - 1;
+                int y = array[x] + a;
+                int z = 365 - y;
+                Console.WriteLine($"{y} день с начала года");
+                Console.WriteLine($"{z} осталось до окончания года");
+            }
+        }
+    }
+}
+

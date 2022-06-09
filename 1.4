@@ -1,0 +1,22 @@
+﻿using System;
+namespace Currently
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int k = 0;
+            Console.WriteLine("Введите число");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = n; n > 0; i++)
+            {
+                k = n % 10;
+                n = n / 10;
+                Console.WriteLine(k);
+            }
+
+        }
+    }
+}
